@@ -1,3 +1,4 @@
+import 'package:globo_fitness/data/secrets.dart';
 import 'package:globo_fitness/data/weather.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -5,7 +6,7 @@ import 'dart:convert';
 class HttpHelper {
   final String authority = 'api.openweathermap.org';
   final String path = 'data/2.5/weather';
-  final String apiKey = '3977b037300bbdede1eb3920bb65114b';
+  final String apiKey = weatherApiKey;
 
   Future<Weather> getWeather(String location) async {
     Map<String, dynamic> parameters = {'q': location, 'appId': apiKey};
